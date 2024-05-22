@@ -14,7 +14,7 @@ public class CreateProductValidator : AbstractValidator<CreateProduct>
         RuleFor(r => r.Discount).Cascade(CascadeMode.Stop).InclusiveBetween(0, 100)
             .WithMessage("Discount percentage is a number between 0 to 100");
 
-        RuleFor(r => r.Discount).Cascade(CascadeMode.Stop).LessThan(1)
+        RuleFor(r => r.Price).Cascade(CascadeMode.Stop).GreaterThan(0)
            .WithMessage("Price cannot be less than 1$");
     }
 }

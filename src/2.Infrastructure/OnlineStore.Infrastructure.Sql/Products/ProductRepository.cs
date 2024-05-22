@@ -11,6 +11,8 @@ public class ProductRepository(OnlineStoreDbContext context) : IProductRepositor
 {
     public async Task<bool> ExistAsync(string title) => await context.Products.AnyAsync(s => s.Title == (Title)title);
 
+    public async Task<Product?> GetByIdAsync(int id) => await context.Products.SingleOrDefaultAsync(s => s.Id == id);
+
     public async Task InsertAsync(Product product) => await context.Products.AddAsync(product);
 
     public async Task SaveChangeAsync() => await context.SaveChangesAsync();

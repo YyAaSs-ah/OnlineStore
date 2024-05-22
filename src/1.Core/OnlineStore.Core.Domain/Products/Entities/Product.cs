@@ -21,5 +21,10 @@ public sealed class Product : BaseEntity
     }
     public static Product Create(CreateProductParameter productParameter) =>
         new Product(productParameter);
-   
+    public void IncreaseCount(int count) => InventoryCount = InventoryCount.Set(InventoryCount.Value + count);
+    public void DecreaseCount(int count)
+    {
+        if (InventoryCount.Value >= count)
+            InventoryCount = InventoryCount.Set(InventoryCount.Value - count);
+    }
 }
