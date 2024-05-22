@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\2.Infrastructure\OnlineStore.Infrastructure.Sql\OnlineStore.Infrastructure.Sql.csproj" />
+    <ProjectReference Include="..\OnlineStore.Core.Contracts\OnlineStore.Core.Contracts.csproj" />
+    <ProjectReference Include="..\OnlineStore.Core.Domain\OnlineStore.Core.Domain.csproj" />
+    <ProjectReference Include="..\OnlineStore.Core.RequestResponse\OnlineStore.Core.RequestResponse.csproj" />
+  </ItemGroup>
+
+</Project>
