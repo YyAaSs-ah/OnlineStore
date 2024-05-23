@@ -3,7 +3,7 @@ using System.Data;
 
 namespace OnlineStore.Core.RequestResponse.Products.Create;
 
-public class CreateProductValidator : AbstractValidator<CreateProduct>
+public sealed class CreateProductValidator : AbstractValidator<CreateProduct>
 {
     public CreateProductValidator()
     {

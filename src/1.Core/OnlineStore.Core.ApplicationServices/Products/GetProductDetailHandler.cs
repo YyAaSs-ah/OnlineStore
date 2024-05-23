@@ -5,7 +5,7 @@ using OnlineStore.Core.RequestResponse.Products.GetDetail;
 
 namespace OnlineStore.Core.ApplicationServices.Products;
 
-public class GetProductDetailHandler(IProductRepository productRepository) : IRequestHandler<GetProductDetail, Result<GetProductDetailResult>>
+public sealed class GetProductDetailHandler(IProductRepository productRepository) : IRequestHandler<GetProductDetail, Result<GetProductDetailResult>>
 {
     public async Task<Result<GetProductDetailResult>> Handle(GetProductDetail request, CancellationToken cancellationToken)
     {

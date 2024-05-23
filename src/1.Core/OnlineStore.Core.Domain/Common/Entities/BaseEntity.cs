@@ -1,4 +1,4 @@
-﻿namespace OnlineStore.Core.Domain.Common;
+﻿namespace OnlineStore.Core.Domain.Common.Entities;
 
 public class BaseEntity
 {

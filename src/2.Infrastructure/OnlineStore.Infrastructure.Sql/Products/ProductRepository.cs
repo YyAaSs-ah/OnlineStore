@@ -8,10 +8,9 @@ using OnlineStore.Infrastructure.Sql.Common;
 
 namespace OnlineStore.Infrastructure.Sql.Products;
 
-public class ProductRepository(OnlineStoreDbContext context) : IProductRepository
+public sealed class ProductRepository(OnlineStoreDbContext context) : IProductRepository
 {
     public async Task<bool> ExistAsync(string title) => await context.Products.AnyAsync(s => s.Title == (Title)title);
-
     public async Task<Product?> GetByIdAsync(int id) => await context.Products.SingleOrDefaultAsync(s => s.Id == id);
     public async Task<GetProductDetailResult?> GetProductDetailAsync(int id)
     {

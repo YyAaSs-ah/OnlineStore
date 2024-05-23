@@ -7,7 +7,7 @@ public class Result
     public IReadOnlyList<string> Errors => _errors;
     public void AddError(string error) => _errors.Add(error);
 }
-public class Result<TData> : Result
+public sealed class Result<TData> : Result
 {
     public Result(TData data)
     {

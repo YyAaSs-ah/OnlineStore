@@ -9,7 +9,7 @@ using System.Data;
 
 namespace OnlineStore.Core.ApplicationServices.Products;
 
-public class CreateProductHandler(IProductRepository productRepository) : IRequestHandler<CreateProduct, Result<int>>
+public sealed class CreateProductHandler(IProductRepository productRepository) : IRequestHandler<CreateProduct, Result<int>>
 {
     public async Task<Result<int>> Handle(CreateProduct request, CancellationToken cancellationToken)
     {

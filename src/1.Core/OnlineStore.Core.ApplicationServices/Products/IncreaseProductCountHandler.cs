@@ -5,7 +5,7 @@ using OnlineStore.Core.RequestResponse.Products.IncreaseCount;
 
 namespace OnlineStore.Core.ApplicationServices.Products;
 
-public class IncreaseProductCountHandler(IProductRepository productRepository) : IRequestHandler<IncreaseProductCount, Result>
+public sealed class IncreaseProductCountHandler(IProductRepository productRepository) : IRequestHandler<IncreaseProductCount, Result>
 {
     public async Task<Result> Handle(IncreaseProductCount request, CancellationToken cancellationToken)
     {

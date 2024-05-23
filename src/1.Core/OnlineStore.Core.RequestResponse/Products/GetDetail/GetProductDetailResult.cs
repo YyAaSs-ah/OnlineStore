@@ -2,7 +2,7 @@
 
 namespace OnlineStore.Core.RequestResponse.Products.GetDetail;
 
-public class GetProductDetailResult
+public sealed class GetProductDetailResult
 {
     public int Id { get; set; }
     public string Title { get; set; } = default!;
