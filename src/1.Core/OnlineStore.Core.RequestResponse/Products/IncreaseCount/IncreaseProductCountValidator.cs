@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using System.Data;
 
-namespace OnlineStore.Core.RequestResponse.Products.Create;
+namespace OnlineStore.Core.RequestResponse.Products.IncreaseCount;
 
 public class IncreaseProductCountValidator : AbstractValidator<IncreaseProductCount>
 {

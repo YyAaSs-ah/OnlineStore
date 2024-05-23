@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using OnlineStore.Core.Contracts.Products;
 using OnlineStore.Core.RequestResponse.Common;
-using OnlineStore.Core.RequestResponse.Products.Create;
+using OnlineStore.Core.RequestResponse.Products.IncreaseCount;
 
 namespace OnlineStore.Core.ApplicationServices.Products;
 
@@ -20,5 +20,4 @@ public class IncreaseProductCountHandler(IProductRepository productRepository) :
         return new Result();
     }
 }
-
 

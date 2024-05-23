@@ -13,6 +13,6 @@ public class Result<TData> : Result
     {
         Data = data;
     }
-    public TData Data { get; set; }
+    public TData Data { get; private set; }
 
 }

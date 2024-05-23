@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using OnlineStore.Core.RequestResponse.Common;
 
-namespace OnlineStore.Core.RequestResponse.Products.Create;
+namespace OnlineStore.Core.RequestResponse.Products.IncreaseCount;
 
 public class IncreaseProductCount : IRequest<Result>
 {
