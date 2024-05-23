@@ -11,7 +11,7 @@ public sealed class IncreaseProductCountHandler(IProductRepository productReposi
     {
         var product = await productRepository.GetByIdAsync(request.Id);
         if (product == null)
-            throw new KeyNotFoundException("The specified product was not found");
+            throw new ApplicationException("The specified product was not found");
 
         product.IncreaseCount(request.Count);
 

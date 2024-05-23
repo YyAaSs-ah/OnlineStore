@@ -1,5 +1,4 @@
-﻿using OnlineStore.Core.Domain.Exceptions;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 namespace OnlineStore.Core.Domain.Common.ValueObjects;
 
@@ -11,7 +10,7 @@ public sealed class Count : IEquatable<Count>
     private Count(int value)
     {
         if (value < 0)
-            throw new ValueObjectInvalidStateException("Count cannot be less than 0");
+            throw new ApplicationException("Count cannot be less than 0");
         Value = value;
     }
     public static Count Set(int value) => new Count(value);

@@ -1,6 +1,4 @@
-﻿using OnlineStore.Core.Domain.Exceptions;
-
-namespace OnlineStore.Core.Domain.Products.ValueObjects;
+﻿namespace OnlineStore.Core.Domain.Products.ValueObjects;
 
 public sealed class Discount
 {
@@ -9,7 +7,7 @@ public sealed class Discount
     public Discount(int discount)
     {
         if (discount < 0 || discount > 100)
-            throw new ValueObjectInvalidStateException("Discount percentage is a number between 0 to 100");
+            throw new ApplicationException("Discount percentage is a number between 0 to 100");
         Value = discount;
     }
 

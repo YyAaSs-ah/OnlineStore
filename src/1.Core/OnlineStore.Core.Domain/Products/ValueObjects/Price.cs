@@ -1,6 +1,4 @@
-﻿using OnlineStore.Core.Domain.Exceptions;
-
-namespace OnlineStore.Core.Domain.Products.ValueObjects;
+﻿namespace OnlineStore.Core.Domain.Products.ValueObjects;
 
 public sealed class Price : IEquatable<Price>
 {
@@ -10,7 +8,7 @@ public sealed class Price : IEquatable<Price>
     private Price(decimal value)
     {
         if (value < 1)
-            throw new ValueObjectInvalidStateException("Price cannot be less than 1$");
+            throw new ApplicationException("Price cannot be less than 1$");
 
         Value = value;
     }

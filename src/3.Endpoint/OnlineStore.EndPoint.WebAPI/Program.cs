@@ -3,6 +3,7 @@ using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using OnlineStore.Core.ApplicationServices.Products;
 using OnlineStore.Core.RequestResponse.Products.Create;
+using OnlineStore.EndPoint.WebAPI.Infrastructures.Middlewares;
 using OnlineStore.EndPoint.WebAPI.Infrastructures.ServiceRegisterations;
 using OnlineStore.Infrastructure.Sql.Common;
 
@@ -24,6 +25,8 @@ builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddMemoryCache();
 
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionHandlerMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {

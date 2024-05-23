@@ -1,7 +1,4 @@
-﻿using OnlineStore.Core.Domain.Exceptions;
-using System.Reflection.Metadata.Ecma335;
-
-namespace OnlineStore.Core.Domain.Products.ValueObjects;
+﻿namespace OnlineStore.Core.Domain.Products.ValueObjects;
 
 public sealed class Title
 {
@@ -11,9 +8,9 @@ public sealed class Title
     private Title(string value)
     {
         if (string.IsNullOrEmpty(value))
-            throw new ValueObjectInvalidStateException("Title cannot be null or white space");
+            throw new ApplicationException("Title cannot be null or white space");
         if (value.Length > 40)
-            throw new ValueObjectInvalidStateException("Title cannot be more than 40 characters");
+            throw new ApplicationException("Title cannot be more than 40 characters");
 
         Value = value;
     }

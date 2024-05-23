@@ -1,6 +1,4 @@
-﻿using OnlineStore.Core.Domain.Exceptions;
-
-namespace OnlineStore.Core.Domain.Users.ValueObjects;
+﻿namespace OnlineStore.Core.Domain.Users.ValueObjects;
 
 public sealed class Name
 {
@@ -10,9 +8,9 @@ public sealed class Name
     private Name(string value)
     {
         if (string.IsNullOrEmpty(value))
-            throw new ValueObjectInvalidStateException("Name cannot be null or white space");
+            throw new ApplicationException("Name cannot be null or white space");
         if (value.Length > 50)
-            throw new ValueObjectInvalidStateException("Name cannot be more than 50 characters");
+            throw new ApplicationException("Name cannot be more than 50 characters");
 
         Value = value;
     }

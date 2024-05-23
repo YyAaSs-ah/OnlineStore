@@ -14,7 +14,7 @@ public sealed class CreateProductHandler(IProductRepository productRepository) :
     public async Task<Result<int>> Handle(CreateProduct request, CancellationToken cancellationToken)
     {
         if (await productRepository.ExistAsync(request.Title))
-            throw new DuplicateNameException("Product`s name is duplicated");
+            throw new ApplicationException("Product`s name is duplicated");
         
         var product = Product.Create(new CreateProductParameter
         (

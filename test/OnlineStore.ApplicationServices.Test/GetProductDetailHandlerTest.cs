@@ -42,7 +42,7 @@ public class GetProductDetailHandlerTest
     }
 
     [Fact]
-    public void GetProduct_WhenProductIsNotExists_ThenRaiseKeyNotFoundException()
+    public void GetProduct_WhenProductIsNotExists_ThenRaiseApplicationException()
     {
         //Arrange
         var productRepositoryMock = new Mock<IProductRepository>();
@@ -62,7 +62,7 @@ public class GetProductDetailHandlerTest
         var result = () => getProductDetailHandler.Handle(getProductDetail, CancellationToken.None);
 
         //Assert
-        Task<KeyNotFoundException> exception = Assert.ThrowsAsync<KeyNotFoundException>(result);
+        Task<ApplicationException> exception = Assert.ThrowsAsync<ApplicationException>(result);
         Assert.Equal("Product not found", exception.Result.Message);
     }
 }

@@ -10,7 +10,7 @@ namespace OnlineStore.ApplicationServices.Test;
 public class CreateProductHandlerTest
 {
     [Fact]
-    public void CreateProduct_WhenProductNameIsExists_ThenRaiseDuplicateError()
+    public void CreateProduct_WhenProductNameIsExists_ThenRaiseApplicationException()
     {
         //Arrange
         var productRepositoryMock = new Mock<IProductRepository>();
@@ -24,7 +24,7 @@ public class CreateProductHandlerTest
         var result = () => createProductHandler.Handle(createProduct, CancellationToken.None);
 
         //Assert
-        Task<DuplicateNameException> exception = Assert.ThrowsAsync<DuplicateNameException>(result);
+        Task<ApplicationException> exception = Assert.ThrowsAsync<ApplicationException>(result);
         Assert.Equal("Product`s name is duplicated", exception.Result.Message);
     }
 

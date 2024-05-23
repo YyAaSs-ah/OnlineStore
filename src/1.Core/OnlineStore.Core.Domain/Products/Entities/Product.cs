@@ -32,7 +32,7 @@ public sealed class Product : BaseEntity
     public void DecreaseCount(int count)
     {
         if (InventoryCount.Value < count)
-            throw new Exception("Insufficient inventory");
+            throw new ApplicationException("Insufficient inventory");
 
         InventoryCount = Count.Set(InventoryCount.Value - count);
     }

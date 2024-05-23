@@ -14,7 +14,7 @@ public class ProductProxy(IProductRepository productRepository, IMemoryCache mem
 
         var productDetail = await productRepository.GetProductDetailAsync(request.Id);
         if (productDetail == null)
-            throw new KeyNotFoundException("Product not found");
+            throw new ApplicationException("Product not found");
 
         memoryCache.Set($"Product_Id_{request.Id}", productDetail, TimeSpan.FromDays(1));
 

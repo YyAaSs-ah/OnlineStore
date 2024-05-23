@@ -17,11 +17,11 @@ public sealed class CreateOrderHandler(IOrderRepository orderRepository,
     public async Task<Result<int>> Handle(CreateOrder request, CancellationToken cancellationToken)
     {
         if (!await userRepository.ExistAsync(request.UserId))
-            throw new KeyNotFoundException("User not found");
+            throw new ApplicationException("User not found");
 
         var product = await productRepository.GetByIdAsync(request.ProductId);
         if (product is null)
-            throw new KeyNotFoundException("Product not found");
+            throw new ApplicationException("Product not found");
 
         product.DecreaseCount(request.ProductCount);
 
