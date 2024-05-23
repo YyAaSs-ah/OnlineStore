@@ -23,6 +23,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore.Infrastructure.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore.EndPoint.WebAPI", "src\3.Endpoint\OnlineStore.EndPoint.WebAPI\OnlineStore.EndPoint.WebAPI.csproj", "{B90519D7-90EE-4271-892A-6BC80DECFE63}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0481EDE4-160B-4FB7-8D03-AD47AE8A054C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.ApplicationServices.Test", "test\OnlineStore.ApplicationServices.Test\OnlineStore.ApplicationServices.Test.csproj", "{39B9CB6F-7F12-4881-B82F-3F9E94BD05DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +57,10 @@ Global
 		{B90519D7-90EE-4271-892A-6BC80DECFE63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B90519D7-90EE-4271-892A-6BC80DECFE63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B90519D7-90EE-4271-892A-6BC80DECFE63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39B9CB6F-7F12-4881-B82F-3F9E94BD05DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39B9CB6F-7F12-4881-B82F-3F9E94BD05DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39B9CB6F-7F12-4881-B82F-3F9E94BD05DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39B9CB6F-7F12-4881-B82F-3F9E94BD05DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
