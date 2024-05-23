@@ -18,7 +18,6 @@ public sealed class ProductRepository(OnlineStoreDbContext context) : IProductRe
         {
             Id = s.Id,
             Title = s.Title.Value,
-            InventoryCount = s.InventoryCount.Value,
             DiscountedPrice = (100 - (int)s.Discount) * 0.01M * (decimal)s.Price
 
         }).SingleOrDefaultAsync(w => w.Id == id); ;

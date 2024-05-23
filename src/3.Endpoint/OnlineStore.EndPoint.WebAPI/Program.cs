@@ -1,7 +1,6 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using OnlineStore.Core.ApplicationServices.Products;
 using OnlineStore.Core.RequestResponse.Products.Create;
 using OnlineStore.EndPoint.WebAPI.Infrastructures.ServiceRegisterations;
@@ -16,11 +15,13 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<OnlineStoreDbContext>(options =>
         options.UseSqlServer(builder.Configuration.GetConnectionString("OnlineStoreConnectionString")));
 
-builder.Services.RegisterRepositories();
+builder.Services.RegisterDependencies();
 builder.Services.AddMediatR(options => options.RegisterServicesFromAssemblies(typeof(CreateProductHandler).Assembly));
 
 builder.Services.AddValidatorsFromAssemblyContaining<CreateProductValidator>();
 builder.Services.AddFluentValidationAutoValidation();
+
+builder.Services.AddMemoryCache();
 
 var app = builder.Build();
 

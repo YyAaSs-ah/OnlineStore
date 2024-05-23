@@ -1,17 +1,15 @@
 ﻿using MediatR;
-using OnlineStore.Core.Contracts.Products;
+using OnlineStore.Core.ApplicationServices.Products.Proxies;
 using OnlineStore.Core.RequestResponse.Common;
 using OnlineStore.Core.RequestResponse.Products.GetDetail;
 
 namespace OnlineStore.Core.ApplicationServices.Products;
 
-public sealed class GetProductDetailHandler(IProductRepository productRepository) : IRequestHandler<GetProductDetail, Result<GetProductDetailResult>>
+public sealed class GetProductDetailHandler(ProductProxy getProductDetailProxy) : IRequestHandler<GetProductDetail, Result<GetProductDetailResult>>
 {
     public async Task<Result<GetProductDetailResult>> Handle(GetProductDetail request, CancellationToken cancellationToken)
     {
-        var productDetail = await productRepository.GetProductDetailAsync(request.Id);
-        if (productDetail == null)
-            throw new KeyNotFoundException("The specified product was not found");
+        var productDetail = await getProductDetailProxy.GetProductDetail(request);
 
         return new Result<GetProductDetailResult>(productDetail);
     }

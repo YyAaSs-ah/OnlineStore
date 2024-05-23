@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
+using OnlineStore.Core.ApplicationServices.Products.Proxies;
 using OnlineStore.Core.Contracts.Orders;
 using OnlineStore.Core.Contracts.Products;
 using OnlineStore.Core.Contracts.Users;
@@ -12,11 +13,12 @@ namespace OnlineStore.EndPoint.WebAPI.Infrastructures.ServiceRegisterations;
 
 public static class OnlineStoreServiceRegisteration
 {
-    public static IServiceCollection RegisterRepositories(this IServiceCollection services)
+    public static IServiceCollection RegisterDependencies(this IServiceCollection services)
     {
         services.AddScoped<IProductRepository, ProductRepository>();
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IOrderRepository, OrderRepository>();
+        services.AddScoped<ProductProxy>();
 
         return services;
     }
